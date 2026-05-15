@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>覓 MEET｜台灣風土梅酒</title>
+
+<style>
+:root{
+  --brown:#6b4f32;
+  --dark:#2b2118;
+  --gold:#b88a4a;
+  --cream:#f6efe5;
+  --white:#fff;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:"Noto Serif TC","PingFang TC","Microsoft JhengHei",serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.8;
+}
+
+.age-notice{
+  background:#21160e;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+  letter-spacing:2px;
+}
+
+.header{
+  height:76px;
+  background:rgba(255,255,255,.92);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  position:sticky;
+  top:0;
+  z-index:99;
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  color:var(--brown);
+  font-size:30px;
+  letter-spacing:8px;
+  font-weight:700;
+}
+
+.logo span{
+  font-size:18px;
+  margin-left:8px;
+  letter-spacing:6px;
+}
+
+.menu{
+  font-size:34px;
+  line-height:1;
+}
+
+.hero{
+  position:relative;
+  min-height:560px;
+  padding:80px 28px 40px;
+  background:
+    linear-gradient(90deg,rgba(246,239,229,.96),rgba(246,239,229,.6)),
+    url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero h1{
+  font-size:42px;
+  line-height:1.35;
+  color:var(--brown);
+  margin-bottom:28px;
+  letter-spacing:3px;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:360px;
+  margin-bottom:34px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 34px;
+  background:var(--brown);
+  color:#fff;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.dots{
+  position:absolute;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:9px;
+}
+
+.dots span{
+  width:10px;
+  height:10px;
+  background:#b8b8b8;
+  border-radius:50%;
+}
+
+.dots span:first-child{
+  background:var(--brown);
+}
+
+section{
+  padding:64px 24px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:34px;
+}
+
+.section-title small{
+  display:block;
+  color:var(--brown);
+  letter-spacing:6px;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.section-title h2{
+  font-size:34px;
+  letter-spacing:6px;
+  font-weight:500;
+}
+
+.line{
+  width:44px;
+  height:3px;
+  background:var(--gold);
+  margin:14px auto 0;
+}
+
+.products{
+  background:#fff;
+}
+
+.product-grid{
+  display:grid;
+  gap:24px;
+}
+
+.card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  display:block;
+}
+
+.card-body{
+  padding:22px;
+}
+
+.card-body h3{
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.card-body p{
+  font-size:16px;
+}
+
+.story{
+  background:linear-gradient(135deg,#f8f1e7,#fff);
+}
+
+.story img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:20px;
+  margin-bottom:30px;
+}
+
+.story h2{
+  font-size:34px;
+  color:var(--brown);
+  margin-bottom:18px;
+  letter-spacing:4px;
+}
+
+.story p{
+  font-size:17px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:36px;
+  text-align:center;
+}
+
+.feature-icon{
+  font-size:34px;
+  color:var(--gold);
+  margin-bottom:8px;
+}
+
+.feature h3{
+  font-size:17px;
+  margin-bottom:6px;
+}
+
+.feature p{
+  font-size:13px;
+  line-height:1.7;
+}
+
+.cta{
+  background:var(--brown);
+  color:#fff;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:34px;
+  margin-bottom:16px;
+}
+
+.cta .btn{
+  background:#fff;
+  color:var(--brown);
+  margin-top:26px;
+}
+
+.bottom-nav{
+  position:sticky;
+  bottom:0;
+  background:linear-gradient(90deg,#6b4f32,#9b7650);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  color:#fff;
+  z-index:90;
+}
+
+.bottom-nav a{
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+  padding:12px 4px;
+  font-size:13px;
+  border-left:1px solid rgba(255,255,255,.25);
+}
+
+.bottom-nav span{
+  display:block;
+  font-size:22px;
+  margin-bottom:3px;
+}
+
+footer{
+  background:#21160e;
+  color:#fff;
+  text-align:center;
+  padding:32px 20px 90px;
+  font-size:13px;
+}
+
+@media(min-width:768px){
+  .hero{
+    min-height:720px;
+    padding:130px 10%;
+  }
+
+  .hero h1{
+    font-size:62px;
+  }
+
+  .hero p{
+    font-size:21px;
+    max-width:520px;
+  }
+
+  .product-grid{
+    max-width:1100px;
+    margin:auto;
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .story-inner{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+
+  .story img{
+    height:480px;
+    margin-bottom:0;
+  }
+
+  .bottom-nav{
+    display:none;
+  }
+
+  footer{
+    padding-bottom:32px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="age-notice">
+  飲酒過量，有害健康。未滿十八歲者禁止飲酒。
+</div>
+
+<header class="header">
+  <div class="logo">覓 <span>MEET</span></div>
+  <div class="menu">☰</div>
+</header>
+
+<section class="hero">
+  <h1>尋覓台灣土地裡的<br>自然好味道</h1>
+  <p>
+    以台灣風土為靈感，將梅子、果香與手工釀造工藝，
+    轉化成一瓶適合分享、微醺、相聚的梅酒。
+  </p>
+  <a href="#products" class="btn">探索產品</a>
+
+  <div class="dots">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <div class="section-title">
+    <small>PRODUCTS</small>
+    <h2>產品・體驗</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=900&q=80" alt="青森蘋果梅酒">
+      <div class="card-body">
+        <h3>青森蘋果梅酒</h3>
+        <p>清爽蘋果香氣與梅子的酸甜交織，適合冰飲、餐酒搭配與朋友聚會。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=900&q=80" alt="柚子酒">
+      <div class="card-body">
+        <h3>柚子酒</h3>
+        <p>明亮柑橘香氣，入口輕盈，帶有自然果酸與清新的尾韻。</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?auto=format&fit=crop&w=900&q=80" alt="經典梅酒">
+      <div class="card-body">
+        <h3>經典梅酒</h3>
+        <p>以梅子的酸、甜、香為核心，呈現溫潤而耐喝的日常微醺。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="story" class="story">
+  <div class="story-inner">
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80" alt="台灣土地與果實">
+
+    <div>
+      <h2>關於・好覓</h2>
+      <p>
+        好覓，是對土地的尋覓，也是對味道的重新理解。
+        我們相信，一瓶酒不只是飲品，而是一段風土、季節與人情的保存。
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">♧</div>
+          <h3>連結土地</h3>
+          <p>從台灣在地素材出發，讓每一口都帶著產地故事。</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">◌</div>
+          <h3>永續生態</h3>
+          <p>尊重自然節奏，選擇友善環境的生產方式。</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">◎</div>
+          <h3>手工釀造</h3>
+          <p>以時間、溫度與經驗，慢慢釀出細緻風味。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shop" class="cta">
+  <h2>覓一瓶你我的酒</h2>
+  <p>想知道哪裡可以買到？歡迎聯繫我們或追蹤社群取得最新通路資訊。</p>
+  <a href="#" class="btn">哪裡買</a>
+</section>
+
+<footer>
+  <p>未滿十八歲者，禁止飲酒。</p>
+  <p>© 2026 覓 MEET All Rights Reserved.</p>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="#products"><span>♧</span>產品體驗</a>
+  <a href="#story"><span>♡</span>關於好覓</a>
+  <a href="#shop"><span>⌖</span>哪裡買</a>
+  <a href="#"><span>☏</span>聯絡我們</a>
+</nav>
+
+</body>
+</html>
